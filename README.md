@@ -69,9 +69,14 @@ To use a different path, change `GTG_PATH` in `lib/gtg.ts` and rename the
 
 ```bash
 pnpm install
+just hooks   # install pre-commit hooks (needs `pre-commit` on PATH)
 just dev     # http://localhost:3000
 just check   # lint + typecheck + tests
 ```
+
+Every commit runs `.pre-commit-config.yaml`: file hygiene, private-key and
+gitleaks secret scan, then `pnpm lint`, `pnpm typecheck` and `pnpm test`. A
+failing check blocks the commit.
 
 The geolocation health check fails on `localhost`, because only Vercel adds the
 geo headers. Routing (`/metrics/healthy`) works locally.
