@@ -9,3 +9,4 @@
 - Unit tests for the gateway proxy.
 - GTM and gtag.js snippets that load from the first-party path.
 - Demo page with live gateway health checks.
+- `justfile`, `scripts/health.sh`, `.env.example` and README setup guide.
